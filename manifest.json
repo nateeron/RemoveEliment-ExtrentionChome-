@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Remove Elements",
+    "version": "1.0",
+    "description": "Automatically removes specified elements from web pages.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html"  
+    },
+    "background": {
+      "service_worker": "scripts/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://animeyuzu.com/*"],
+        "js": ["scripts/content.js"]
+      }
+    ]
+  }
+  
